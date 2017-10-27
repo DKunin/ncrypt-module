@@ -1,17 +1,14 @@
 {
-  "name": "ncrypt-cli",
+  "name": "ncrypt-module",
   "version": "0.0.2",
   "private": false,
-  "main": "./cli",
-  "bin": {
-    "ncrypt": "./cli"
-  },
+  "main": "./index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/dkunin/decrypt-cli.git"
+    "url": "git://github.com/dkunin/ncrypt-module.git"
   },
   "bugs": {
-    "url": "https://github.com/dkunin/decrypt-cli/issues"
+    "url": "https://github.com/dkunin/ncrypt-module/issues"
   },
   "scripts": {
     "test": "echo test",
@@ -19,17 +16,15 @@
     "dev": "node ./",
     "build": "NODE_ENV=production node ./"
   },
-  "homepage": "https://github.com/dkunin/decrypt-cli",
+  "homepage": "https://github.com/dkunin/ncrypt-module",
   "keywords": [
-    "cli,",
-    "crypt,",
+    "cli",
+    "crypt",
+    "ncrypt",
+    "node-crypt",
     "decrypt"
   ],
   "license": "MIT",
-  "description": "> This is an example file with default selections.",
-  "dependencies": {
-    "del": "3.0.0",
-    "hasha": "3.0.0",
-    "meow": "3.7.0"
-  }
+  "description": "Simple node module wrapper over ssl functions",
+  "dependencies": {}
 }
