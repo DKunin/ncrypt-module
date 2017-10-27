@@ -1,24 +1,23 @@
 # NCrypt [WIP]
 
-> Simple cli module for encoding and decoding strings and files
+> Simple node module wrapper over ssl functions
 
 ## Install
 
 ```
-    npm i ncrypt-cli -g
+    npm i ncrypt-module -g
 ```
 
 ## Usage
 
 ```
     # Usage:
-        ncrypt --f <path> --e/--d --k <key>
+        const crypter = require('ncrypt-module');
 
-    # Flags
-        --f, --file: Path to file to be encrypted/decrypted
-        --e,--encode / --d,--decode: Action to take
-        --k, --key: Proided secret key to encode/decode
-        --i, --input: When encrypting - you can provide string instead of filename
+        crypter.decrypt({
+            key: <PRIVATE-KEY>, 
+            file: <FILE-PATH>
+        }).then(processResult).catch(processError);
 ```
 
 ## Contribute
