@@ -1,10 +1,11 @@
 'use strict';
 
 const { exec } = require('child_process');
+const ncrypt = {};
 
-module.exports = {
-    decrypt: function({ key, file }) {
-        return new Promise((resolve, reject) => {
+ncrypt.decrypt = ({ key, file }) => {
+    return new Promise(
+        (resolve, reject) => {
             exec(
                 `openssl enc -aes-256-cbc -d -a -in ${file} -k ${key}`,
                 (err, stdout, stderr) => {
@@ -12,14 +13,16 @@ module.exports = {
                         reject(`exec error: ${err}`);
                         return;
                     }
-
                     resolve(stdout);
                 }
             );
-        });
-    },
-    encrypt: function({ key, file }) {
-        return new Promise((resolve, reject) => {
+        }
+    );
+};
+
+ncrypt.encrypt = ({ key, file }) => {
+    return new Promise(
+        (resolve, reject) => {
             exec(
                 `openssl enc -aes-256-cbc -salt -a -in ${file} -k ${key}`,
                 (err, stdout, stderr) => {
@@ -27,10 +30,11 @@ module.exports = {
                         reject(`exec error: ${err}`);
                         return;
                     }
-
                     resolve(stdout);
                 }
             );
-        });
-    }
+        }
+    );
 };
+
+module.exports = exports = ncrypt;

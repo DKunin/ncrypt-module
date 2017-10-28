@@ -3,21 +3,21 @@
 > Simple node module wrapper over ssl functions
 
 ## Install
-
-```
+```bash
     npm i ncrypt-module -g
 ```
 
 ## Usage
-
-```
-    # Usage:
-        const crypter = require('ncrypt-module');
-
-        crypter.decrypt({
-            key: <PRIVATE-KEY>, 
-            file: <FILE-PATH>
-        }).then(processResult).catch(processError);
+```js
+    const crypter = require('ncrypt-module');
+    crypter.decrypt(
+        {
+            key: "<PRIVATE-KEY>", 
+            file: "<FILE-PATH>"
+        }
+    )
+    .then(processResult)
+    .catch(processError);
 ```
 
 ## Contribute
